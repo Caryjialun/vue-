@@ -1,6 +1,7 @@
 <template>
     <div>
-        <LjlTable :columns="column" :data="tableData"></LjlTable>
+        <!-- <LjlTable></LjlTable> -->
+        <ljl-table :columns="column" :data="tableData"></ljl-table>
     </div>
 </template>
 
