@@ -4,7 +4,6 @@ import HelloWorld from '@/components/HelloWorld'
 import Scroll from '@/components/scroll'
 import Transition from '@/components/transition'
 import Tree from '@/components/tree'
-// import Tab from '@/views/tabDemo'
 import Table from '@/views/tableDemo'
 
 Vue.use(Router)
