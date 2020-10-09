@@ -5,6 +5,7 @@ import Scroll from '@/components/scroll'
 import Transition from '@/components/transition'
 import Tree from '@/components/tree'
 import Table from '@/views/tableDemo'
+import ConfigTable from '@/views/tableConfig'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/table',
       name: 'Table',
       component: Table
+    },
+    {
+      path: '/configTable',
+      name: 'ConfigTable',
+      component: ConfigTable
     }
   ]
 })

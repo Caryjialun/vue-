@@ -23,3 +23,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 描述：
 1.封装常用基础组件
 table-基础表格加checkbox
+
+2.可配置表格element二次封装表格
