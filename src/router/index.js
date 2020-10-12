@@ -7,6 +7,7 @@ import Tree from '@/components/tree'
 import Table from '@/views/tableDemo'
 import ConfigTable from '@/views/tableConfig'
 import TreeTransfer from '@/views/treeTransferDemo'
+import Radio from '@/views/RadioDemo'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/treeTransfer',
       name: 'TreeTransfer',
       component: TreeTransfer
+    },
+    {
+      path: '/radio',
+      name: 'Radio',
+      component: Radio
     }
   ]
 })
