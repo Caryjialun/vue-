@@ -6,6 +6,7 @@ import Transition from '@/components/transition'
 import Tree from '@/components/tree'
 import Table from '@/views/tableDemo'
 import ConfigTable from '@/views/tableConfig'
+import TreeTransfer from '@/views/treeTransferDemo'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/configTable',
       name: 'ConfigTable',
       component: ConfigTable
+    },
+    {
+      path: '/treeTransfer',
+      name: 'TreeTransfer',
+      component: TreeTransfer
     }
   ]
 })
