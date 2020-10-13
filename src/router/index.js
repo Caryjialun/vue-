@@ -9,6 +9,7 @@ import ConfigTable from '@/views/tableConfig'
 import TreeTransfer from '@/views/treeTransferDemo'
 import Radio from '@/views/RadioDemo'
 import Switch from '@/views/SwitchDemo'
+import Input from '@/views/inputDemo'
 
 
 Vue.use(Router)
@@ -59,6 +60,11 @@ export default new Router({
       path: '/switch',
       name: 'Switch',
       component: Switch
+    },
+    {
+      path: '/input',
+      name: 'Input',
+      component: Input
     }
   ]
 })
