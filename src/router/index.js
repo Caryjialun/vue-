@@ -8,6 +8,8 @@ import Table from '@/views/tableDemo'
 import ConfigTable from '@/views/tableConfig'
 import TreeTransfer from '@/views/treeTransferDemo'
 import Radio from '@/views/RadioDemo'
+import Switch from '@/views/SwitchDemo'
+
 
 Vue.use(Router)
 
@@ -52,6 +54,11 @@ export default new Router({
       path: '/radio',
       name: 'Radio',
       component: Radio
+    },
+    {
+      path: '/switch',
+      name: 'Switch',
+      component: Switch
     }
   ]
 })
