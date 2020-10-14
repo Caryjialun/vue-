@@ -2,14 +2,10 @@
     <div>
         <base-input placeholder="请输入内容"
          v-model="value" @input="inputValue"
-         :prefixIcon="icon1" 
+         :prefixIcon="icon1" :del="true"
         >
         </base-input>
          
-        <!-- <div>
-            121
-            <i :class="icon1" class="iconfont"></i>
-        </div> -->
     </div>
 </template>
 
