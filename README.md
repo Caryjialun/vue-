@@ -26,6 +26,8 @@ npm run build --report
 
 3.switch-基础switch开关
 
+4.input-基础输入框
+
 第二快：二次封装element组件
 1.可配置表格element二次封装表格
 
