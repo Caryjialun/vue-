@@ -28,6 +28,8 @@ npm run build --report
 
 4.input-基础输入框
 
+5.breadcrumb-基础面包屑
+
 第二快：二次封装element组件
 1.可配置表格element二次封装表格
 

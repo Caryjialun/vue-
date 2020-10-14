@@ -10,6 +10,7 @@ import TreeTransfer from '@/views/treeTransferDemo'
 import Radio from '@/views/RadioDemo'
 import Switch from '@/views/SwitchDemo'
 import Input from '@/views/inputDemo'
+import Breadcrumb from '@/views/breadcrumbDemo'
 
 
 Vue.use(Router)
@@ -65,6 +66,11 @@ export default new Router({
       path: '/input',
       name: 'Input',
       component: Input
+    },
+    {
+      path: '/breadcrumb',
+      name: 'Breadcrumb',
+      component:Breadcrumb
     }
   ]
 })
