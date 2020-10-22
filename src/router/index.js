@@ -11,7 +11,7 @@ import Radio from '@/views/RadioDemo'
 import Switch from '@/views/SwitchDemo'
 import Input from '@/views/inputDemo'
 import Breadcrumb from '@/views/breadcrumbDemo'
-
+import Select from '@/views/selectDemo'
 
 Vue.use(Router)
 
@@ -71,6 +71,11 @@ export default new Router({
       path: '/breadcrumb',
       name: 'Breadcrumb',
       component:Breadcrumb
+    },
+    {
+      path: '/select',
+      name: 'Select',
+      component: Select
     }
   ]
 })

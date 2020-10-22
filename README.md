@@ -18,7 +18,7 @@ npm run build
 npm run build --report
 
 描述：
-封装2大块
+封装2大块，按照对应的路径进行跳转
 第一块：基础组件
 1.table-基础表格加checkbox
 
