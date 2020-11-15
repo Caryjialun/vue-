@@ -12,6 +12,7 @@ import Switch from '@/views/SwitchDemo'
 import Input from '@/views/inputDemo'
 import Breadcrumb from '@/views/breadcrumbDemo'
 import Select from '@/views/selectDemo'
+import Vinput from '@/views/vinputDemo'
 
 Vue.use(Router)
 
@@ -76,6 +77,11 @@ export default new Router({
       path: '/select',
       name: 'Select',
       component: Select
+    },
+    {
+      path: '/vinput',
+      name: 'vinput',
+      component:Vinput
     }
   ]
 })

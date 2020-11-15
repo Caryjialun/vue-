@@ -35,8 +35,8 @@
             }
         },
         props:{
-        value:null,
-           type: {
+            value:null,
+            type: {
                 type: String,
                 default: 'text'
             },
