@@ -119,6 +119,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
+// 启用gzip的应用
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
 

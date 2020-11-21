@@ -50,5 +50,6 @@
     }
     .link-text{
         font-weight: bold;
+
     }
 </style>
