@@ -7,9 +7,9 @@ import Element from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/theme-default/index.css'
 import './assets/icon/iconfont.css'
-import './http/http';
+// import './http/http';
 
-Vue.protype.$http = http;
+// Vue.protype.$http = http;
 Vue.config.productionTip = false
 Vue.use(Element)
 
