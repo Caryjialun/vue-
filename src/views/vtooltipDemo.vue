@@ -1,8 +1,7 @@
 <template>
     
     <div class="title">
-        <vtooltip class="t_title" :tooltip="tooltips"></vtooltip>
-        {{tooltips}}
+        <vtooltip class="t_title" :tooltip="tooltips"> {{tooltips}}</vtooltip>
     </div>
 
 </template>
@@ -14,6 +13,7 @@
         data() {
             return {
                 tooltips:'',
+                
             }
         },
         methods:{},
@@ -32,10 +32,9 @@
             &:hover {
                 .t_title {
                     display: block;
-                    position: absolute;;
+                    position: absolute;
                     left:0;
                     top:-35px;
-                    
                 }
             }
         }
