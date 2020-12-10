@@ -76,7 +76,8 @@ export default {
       }
     })
     // console.log('a', this.dataList[1])
-    
+    let {msg} = this;
+    console.log('aaaa',msg);
   }
 }
 </script>
