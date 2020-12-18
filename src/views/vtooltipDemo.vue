@@ -1,7 +1,10 @@
 <template>
     
     <div class="title">
-        <vtooltip class="t_title" :tooltip="tooltips"> {{tooltips}}</vtooltip>
+        <div class="title-head">
+            <img src="../assets/logo.png"/>
+            <vtooltip class="t_title" :tooltip="tooltips"></vtooltip>
+        </div>
     </div>
 
 </template>
@@ -25,17 +28,25 @@
 
 <style lang="scss" scoped>
        .title {
-            .t_title{
-                display: none;
-            }
-            position: relative; 
-            &:hover {
-                .t_title {
-                    display: block;
-                    position: absolute;
-                    left:0;
-                    top:-35px;
+           .title-head{
+                width: 50px;
+                height: 50px;
+                img{
+                    width: 50px;
+                    height: 50px;
                 }
-            }
+                .t_title{
+                    display: none;
+                }
+                position: relative; 
+                &:hover {
+                    .t_title {
+                        display: block;
+                        position: absolute;
+                        left:0;
+                        top:-35px;
+                    }
+                }
+           }     
         }
 </style>
