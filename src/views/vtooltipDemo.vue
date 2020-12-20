@@ -4,7 +4,6 @@
         <div class="title-head">
             <img src="../assets/logo.png"/>
             <vtooltip class="t_title" :tooltip="tooltips"></vtooltip>
-            
         </div>
     </div>
 
