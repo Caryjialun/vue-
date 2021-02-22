@@ -30,6 +30,8 @@ npm run build --report
 
 5.breadcrumb-基础面包屑
 
+6.delayButton-延迟按钮
+
 第二快：二次封装element组件
 1.可配置表格element二次封装表格
 
