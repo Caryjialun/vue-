@@ -1,35 +1,35 @@
 <template>
-    
+
     <div class="base_tooltip">
      {{tooltip}}
         <div class="all_bubble">
             <div class=" left_bubble "></div>
-            <div class=" left_bubble2"></div> 
+            <div class=" left_bubble2"></div>
             <div class=" zezao "></div>
         </div>
     </div>
-  
+
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-            //   _tooltip:'' 
-            }
-        },
-        props: {
-            tooltip: {
-                type: String,
-                default: ""
-            },
-        }, 
-        methods:{},
-        mounted(){
-            // console.log('a', this.tooltip);
-            // this._tooltip = this.tooltip;
-        }
+export default {
+  data () {
+    return {
+      //   _tooltip:''
     }
+  },
+  props: {
+    tooltip: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {},
+  mounted () {
+    // console.log('a', this.tooltip);
+    // this._tooltip = this.tooltip;
+  }
+}
 </script>
 
 <style>

@@ -23,37 +23,36 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                selectValue:'',
-            }
-        },
-        props:{
-            title:String,
-            options:[String,Array],
-            defalutVal:[String,Number] //默认值属性
-        },
-        // 关键位置监听值的变化
-        watch:{
-            selectValue(){
-               
-                this.$emit('input', this.selectValue);
-            }
-        },
-        computed:{
-         
-        },
-        methods:{
-            changeValue(val){
-                this.selectValue = val.target.value;
-                this.$emit('change', this.selectValue );
-            }
-        },
-        created(){
-            this.selectValue = this.defalutVal; 
-        }
+export default {
+  data () {
+    return {
+      selectValue: ''
     }
+  },
+  props: {
+    title: String,
+    options: [String, Array],
+    defalutVal: [String, Number] // 默认值属性
+  },
+  // 关键位置监听值的变化
+  watch: {
+    selectValue () {
+      this.$emit('input', this.selectValue)
+    }
+  },
+  computed: {
+
+  },
+  methods: {
+    changeValue (val) {
+      this.selectValue = val.target.value
+      this.$emit('change', this.selectValue)
+    }
+  },
+  created () {
+    this.selectValue = this.defalutVal
+  }
+}
 </script>
 
 <style scoped>

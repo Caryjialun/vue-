@@ -1,20 +1,20 @@
 <template>
   <div class="hello">
-  
+
     <h1 ref="aa" @click="aa">{{ msg }}</h1>
-    
+
     <el-table :data="dataList" border style="width: 100%" >
         <el-table-column :fixed="index == '0'? true :false"
-          inline-template v-for="(val,index) in dataTitle" 
+          inline-template v-for="(val,index) in dataTitle"
           :label="val" :key="val.id" :prop = "index.toString()" sortable="custom" align="center" width="120">
           <div>
 				      {{row[parseInt(index)+1]}}
-               
+
 							<span v-if="val=='b' && row[2]>0">
 								<el-button  type="text" @click="searchRow(row[0])">查看</el-button>
 							</span>
 				    </div>
-        </el-table-column> 
+        </el-table-column>
       </el-table>
 
       <div class="circle"  @click="disHandle">
@@ -26,16 +26,16 @@
 </template>
 
 <script>
-import a from 'crypto-random-string';
+import a from 'crypto-random-string'
 export default {
   name: 'HelloWorld',
 
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      dataTitle: ['a', 'b','c'],
-      dataList: [['0', '1',2],['0','1',3]],
-      isShow:false
+      dataTitle: ['a', 'b', 'c'],
+      dataList: [['0', '1', 2], ['0', '1', 3]],
+      isShow: false
 
     }
   },
@@ -43,15 +43,15 @@ export default {
     aa () {
       this.msg = '22'
     },
-    searchRow(data){
-      console.log(data);
+    searchRow (data) {
+      console.log(data)
     },
-    serch(){
-      console.log('a',this.isShow);
+    serch () {
+      console.log('a', this.isShow)
     },
-    disHandle(){
-      this.isShow = !this.isShow;
-      console.log('a',this.isShow)
+    disHandle () {
+      this.isShow = !this.isShow
+      console.log('a', this.isShow)
     }
   },
   watch: {
@@ -70,14 +70,14 @@ export default {
   },
   mounted () {
     console.log('moueted', this.msg)
-    this.dataTitle.forEach((item,index)=>{
-      if(item == 'a'){
-        this.dataTitle.splice(index,1);
+    this.dataTitle.forEach((item, index) => {
+      if (item == 'a') {
+        this.dataTitle.splice(index, 1)
       }
     })
     // console.log('a', this.dataList[1])
-    let {msg} = this;
-    console.log('aaaa',msg);
+    let {msg} = this
+    console.log('aaaa', msg)
   }
 }
 </script>

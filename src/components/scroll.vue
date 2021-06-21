@@ -1,5 +1,4 @@
 
-
 <!-- 选择就诊人/选择就诊人提示/添加就诊人前后/选中就诊人/预约提交成功 -->
 <template>
   <div class="reserve-info">
@@ -42,24 +41,24 @@
 </template>
 
 <script>
-import BScroll from "better-scroll";
+import BScroll from 'better-scroll'
 export default {
-  name: "ReserveInfo",
-  data() {
-    return {};
+  name: 'ReserveInfo',
+  data () {
+    return {}
   },
-  created() {
+  created () {
     this.$nextTick(() => {
-      this.personScroll();
-    });
+      this.personScroll()
+    })
   },
   components: {},
   methods: {
     // 选择就诊人横向滚动
-    personScroll() {
+    personScroll () {
       // 默认有六个就诊人
-      let width = 6 * 120;
-      this.$refs.personTab.style.width = width + "px";
+      let width = 6 * 120
+      this.$refs.personTab.style.width = width + 'px'
       this.$nextTick(() => {
         if (!this.scroll) {
           this.scroll = new BScroll(this.$refs.personWrap, {
@@ -67,15 +66,15 @@ export default {
             click: true,
             scrollX: true,
             scrollY: false,
-            eventPassthrough: "vertical"
-          });
+            eventPassthrough: 'vertical'
+          })
         } else {
-          this.scroll.refresh();
+          this.scroll.refresh()
         }
-      });
+      })
     }
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 .reserve-info {
@@ -168,4 +167,3 @@ export default {
   }
 }
 </style>
-

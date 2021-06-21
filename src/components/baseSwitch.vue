@@ -1,66 +1,66 @@
 <template>
-      
-      <div class="ljl-switch" :class="{'ljl-switch-on' : isChecked}" :value="getValue" 
+
+      <div class="ljl-switch" :class="{'ljl-switch-on' : isChecked}" :value="getValue"
       @click="toggle">
           <div v-if="isChecked && activeText" class="switch-left-text" :style="{color:activeColor?activeColor:''}">
               {{activeText}}
           </div>
-          
+
           <div v-if="!isChecked && inactiveText" class="switch-right-text" :style="{color:inactiveColor?inactiveColor:''}">
               {{inactiveText}}
           </div>
       </div>
-   
+
 </template>
 <script>
-    export default {
-        props: {
-          value: {
-            type: Boolean,
-            default: null
-          },
-          activeText: {
-            type: String,
-            default: ''
-          },
-          inactiveText:{
-            type: String,
-            default: ''
-          },
-          activeColor:{
-            type: String,
-            default:''
-          },
-          inactiveColor:{
-            type: String,
-            default:''
-          }
-        },
-        data () {
-            return {
-                isChecked: this.value,
-                getValue: this.value
-            }
-        },
-        computed: {
-        },
-        watch: {
-          value (val) {
-            this.isChecked = val
-          },
-          isChecked(val) {
-            this.$emit('change', val);
-          }
-        },
-        methods: {
-          toggle() {
-            this.isChecked = !this.isChecked;
-          }
-        },
-        created(){
-          console.log('aa',this.value);
-        }
+export default {
+  props: {
+    value: {
+      type: Boolean,
+      default: null
+    },
+    activeText: {
+      type: String,
+      default: ''
+    },
+    inactiveText: {
+      type: String,
+      default: ''
+    },
+    activeColor: {
+      type: String,
+      default: ''
+    },
+    inactiveColor: {
+      type: String,
+      default: ''
     }
+  },
+  data () {
+    return {
+      isChecked: this.value,
+      getValue: this.value
+    }
+  },
+  computed: {
+  },
+  watch: {
+    value (val) {
+      this.isChecked = val
+    },
+    isChecked (val) {
+      this.$emit('change', val)
+    }
+  },
+  methods: {
+    toggle () {
+      this.isChecked = !this.isChecked
+    }
+  },
+  created () {
+    console.log('aa', this.value)
+  }
+}
 </script>
 <style>
     .ljl-switch {
@@ -108,7 +108,7 @@
         background-color: #409eff;
       }
       .ljl-switch-on:after {
-        transform: translateX(28px); 
+        transform: translateX(28px);
       }
       .switch-left-text{
         position:absolute;
@@ -118,7 +118,7 @@
         user-select:none; /**关键属性不让它选中 */
         text-align:left;
       }
- 
+
       .switch-right-text{
         position:absolute;
         position:0 5px;

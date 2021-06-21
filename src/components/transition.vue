@@ -10,13 +10,13 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                show: true
-            }
-        },
+export default {
+  data () {
+    return {
+      show: true
     }
+  }
+}
 </script>
 
 <style scoped>

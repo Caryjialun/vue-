@@ -18,23 +18,23 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
+export default {
+  data () {
+    return {
 
-            }
-        },
-        props:{
-            dataInfo:{
-                type:Array,
-                default:null
-            },
-            disType:{
-                type:String,
-                default:''
-            }
-        }
     }
+  },
+  props: {
+    dataInfo: {
+      type: Array,
+      default: null
+    },
+    disType: {
+      type: String,
+      default: ''
+    }
+  }
+}
 </script>
 
 <style scoped>

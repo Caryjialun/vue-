@@ -9,7 +9,7 @@
               <div class="batch">
                 <input type="checkbox" v-model="allChecked" @change="AllCheckedChange()" />
               </div>
-            </th> 
+            </th>
             <!-- 表头 -->
             <th v-for="item in dataSource.columns" :key="item.value" :style="{width:item.width+'px'}">
                 {{item.name}}
@@ -25,7 +25,7 @@
             <td v-if="checkedBox">
               <input type="checkbox" v-model="item.checked" @change="changeOne(item)" />
             </td>
-        
+
             <!-- <tr v-for="item in tableData" :key="item.key"> -->
                 <td v-for="part in dataSource.columns" :key="part.key">
                     {{item[part.key]}}
@@ -40,60 +40,58 @@
         </table>
          <!-- 列表无数据 -->
         <div class="noData" v-if="!this.selectDatas.length">{{this.selectDatas.length==0?'暂无数据':''}}</div>
-    
+
     </div>
 
 </template>
 
 <script>
-    export default {
-        //父组件的table数据
-        props: ["dataSource",'showBow'],
-        data() {
-            return {
-                allChecked: "", //全选
-                checkList: [], //全选中数据
-                selectDatas: [], //this.dataSource
-                tableData: this.dataSource.datas,
-                checkedBox: this.showBow
-            }
-        },
-        methods:{
-          
-            // table全选
-            AllCheckedChange() {
-                this.checkList = []; //选中数据
-                // this.tableData//原数据
-                if (this.allChecked == true) {
-                    for (var i = 0; i < this.tableData.length; i++) {
-                    this.tableData[i].checked = true;
-                    this.checkList.push(this.tableData[i]);
-                    }
-                } else {
-                    for (var i = 0; i < this.tableData.length; i++) {
-                    this.tableData[i].checked = false;
-                    this.checkList = [];
-                    }
-                }
-                this.$emit('checkAllData',this.checkList);
-                // console.log('a',this.checkList);
-            },
-            changeOne(item){
-                
-                if(!item.checked){
-                    item = '';
-                }
-                this.$emit('checkData', item);
-
-            }
-        },
-        created(){
-            this.selectDatas = this.tableData;
-            this.selectDatas.forEach((item)=>{
-                item.checked = false;
-            })
-        }
+export default {
+  // 父组件的table数据
+  props: ['dataSource', 'showBow'],
+  data () {
+    return {
+      allChecked: '', // 全选
+      checkList: [], // 全选中数据
+      selectDatas: [], // this.dataSource
+      tableData: this.dataSource.datas,
+      checkedBox: this.showBow
     }
+  },
+  methods: {
+
+    // table全选
+    AllCheckedChange () {
+      this.checkList = [] // 选中数据
+      // this.tableData//原数据
+      if (this.allChecked == true) {
+        for (var i = 0; i < this.tableData.length; i++) {
+          this.tableData[i].checked = true
+          this.checkList.push(this.tableData[i])
+        }
+      } else {
+        for (var i = 0; i < this.tableData.length; i++) {
+          this.tableData[i].checked = false
+          this.checkList = []
+        }
+      }
+      this.$emit('checkAllData', this.checkList)
+      // console.log('a',this.checkList);
+    },
+    changeOne (item) {
+      if (!item.checked) {
+        item = ''
+      }
+      this.$emit('checkData', item)
+    }
+  },
+  created () {
+    this.selectDatas = this.tableData
+    this.selectDatas.forEach((item) => {
+      item.checked = false
+    })
+  }
+}
 </script>
 
 <style lang="scss" scoped>

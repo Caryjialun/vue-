@@ -14,6 +14,7 @@ import Breadcrumb from '@/views/breadcrumbDemo'
 import Select from '@/views/selectDemo'
 import Vinput from '@/views/vinputDemo'
 import Tooltip from '@/views/vtooltipDemo'
+import SwitchModel from '@/views/switch-model-demo'
 
 Vue.use(Router)
 
@@ -27,7 +28,7 @@ export default new Router({
     {
       path: '/tooltip',
       name: 'Tooltip',
-      component:Tooltip
+      component: Tooltip
     },
     {
       path: '/scroll',
@@ -41,7 +42,7 @@ export default new Router({
     },
     {
       path: '/tree',
-      name:'Tree',
+      name: 'Tree',
       component: Tree
     },
     {
@@ -70,6 +71,11 @@ export default new Router({
       component: Switch
     },
     {
+      path: '/switch-model',
+      name: 'SwitchModel',
+      component: SwitchModel
+    },
+    {
       path: '/input',
       name: 'Input',
       component: Input
@@ -77,7 +83,7 @@ export default new Router({
     {
       path: '/breadcrumb',
       name: 'Breadcrumb',
-      component:Breadcrumb
+      component: Breadcrumb
     },
     {
       path: '/select',
@@ -87,8 +93,8 @@ export default new Router({
     {
       path: '/vinput',
       name: 'vinput',
-      component:Vinput
-    },
+      component: Vinput
+    }
     // {
     //   path: '/paging',
     //   name: 'paging',

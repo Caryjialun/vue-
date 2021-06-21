@@ -8,7 +8,7 @@
                 {{item.checkedIcon}}
                 <img :src="activeTab == index?item.checkedIcon:item.icon" alt="" >
                 <div class="tab-text">{{item.title}}</div>
-               
+
             </div>
         </div>
     </div>
@@ -16,36 +16,36 @@
 
 <script>
 
-    export default {
-        name: 'ElTabBottom',
-        data(){
-            return{
-                activeTab:0
-            }
-        },
-        created(){
-            this.activeTab = this.defaultTab;
-        },
-        props:{
-            tabList:{
-                type: Array,
-                default:[]
-            },
-            defaultTab:{
-                type:Number,
-                default:0
-            } 
-        },
-        methods:{
-            changeTab(item,index){
-                if(item.path){
-                    this.activeTab = index;
-                    this.$router.push({name:item.path});
-                };
-                this.$emit('on-click',item,index);
-            }
-        }
+export default {
+  name: 'ElTabBottom',
+  data () {
+    return {
+      activeTab: 0
     }
+  },
+  created () {
+    this.activeTab = this.defaultTab
+  },
+  props: {
+    tabList: {
+      type: Array,
+      default: []
+    },
+    defaultTab: {
+      type: Number,
+      default: 0
+    }
+  },
+  methods: {
+    changeTab (item, index) {
+      if (item.path) {
+        this.activeTab = index
+        this.$router.push({name: item.path})
+      };
+      this.$emit('on-click', item, index)
+    }
+  }
+}
 
 </script>
 

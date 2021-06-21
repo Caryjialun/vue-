@@ -36,44 +36,44 @@
 
 <script>
 
-    export default {
-        name: "ElSearch",
-        data(){
-            return {
-                isShow:false
-            }
-        },
-        props:{
-            placeholder: {
-                type: String,
-                default: ""
-            },
-            className:{
-                type:String,
-                default: ""
-            },
-        },
-        methods:{
-            change(e){
-                if(e.target.value){
-                    this.isShow = true;
-                }else {
-                    this.isShow = false;
-                }
-            },
-            searchByKey(e){
-                this.$refs.input.blur();
-                // this.$refs.input.blur();
-                this.$emit('on-click',this.$refs.input.value);//将点击搜索的事件暴露给父组件
-                // 直接用this.$refs.input.value 拿值。
-            },
-            clear(){
-                this.$refs.input.value = "";
-                this.isShow = false;
-            }
-        }
-
+export default {
+  name: 'ElSearch',
+  data () {
+    return {
+      isShow: false
+    }
+  },
+  props: {
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    className: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    change (e) {
+      if (e.target.value) {
+        this.isShow = true
+      } else {
+        this.isShow = false
+      }
+    },
+    searchByKey (e) {
+      this.$refs.input.blur()
+      // this.$refs.input.blur();
+      this.$emit('on-click', this.$refs.input.value)// 将点击搜索的事件暴露给父组件
+      // 直接用this.$refs.input.value 拿值。
+    },
+    clear () {
+      this.$refs.input.value = ''
+      this.isShow = false
+    }
   }
+
+}
 </script>
 
 <style scoped>
