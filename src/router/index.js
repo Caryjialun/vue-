@@ -15,7 +15,7 @@ import Select from '@/views/selectDemo'
 import Vinput from '@/views/vinputDemo'
 import Tooltip from '@/views/vtooltipDemo'
 import SwitchModel from '@/views/switch-model-demo'
-
+import Attrs from '@/views/attrs'
 Vue.use(Router)
 
 export default new Router({
@@ -24,6 +24,11 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/attrs',
+      name: 'Attrs',
+      component: Attrs
     },
     {
       path: '/tooltip',
