@@ -16,6 +16,7 @@ import Vinput from '@/views/vinputDemo'
 import Tooltip from '@/views/vtooltipDemo'
 import SwitchModel from '@/views/switch-model-demo'
 import Attrs from '@/views/attrs'
+import MultipleSelect from '@/views/multipleSelect'
 Vue.use(Router)
 
 export default new Router({
@@ -99,6 +100,11 @@ export default new Router({
       path: '/vinput',
       name: 'vinput',
       component: Vinput
+    },
+    {
+      path: '/multipleSelect',
+      name: 'multipleSelect',
+      component: MultipleSelect
     }
     // {
     //   path: '/paging',
