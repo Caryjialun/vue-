@@ -17,6 +17,8 @@ import Tooltip from '@/views/vtooltipDemo'
 import SwitchModel from '@/views/switch-model-demo'
 import Attrs from '@/views/attrs'
 import MultipleSelect from '@/views/multipleSelect'
+import Tabs from '@/views/tabDemo'
+import Cascader from '@/views/cascaderDemo'
 Vue.use(Router)
 
 export default new Router({
@@ -105,11 +107,21 @@ export default new Router({
       path: '/multipleSelect',
       name: 'multipleSelect',
       component: MultipleSelect
-    }
+    },
+    {
+      path: '/tabs',
+      name: 'Tab',
+      component: Tabs
+    },
     // {
     //   path: '/paging',
     //   name: 'paging',
     //   component:Paging
     // }
+    {
+      path: '/cascader',
+      name: 'Cascader',
+      component: Cascader
+    }
   ]
 })

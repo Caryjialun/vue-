@@ -8,6 +8,7 @@ import Element from 'element-ui'
 import '@/assets/theme-default/index.css'
 import './assets/icon/iconfont.css'
 // import './http/http';
+import './directives/clickOutside.js'
 
 // Vue.protype.$http = http;
 Vue.config.productionTip = false

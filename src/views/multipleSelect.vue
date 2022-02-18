@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'Mselect',
+  name: 'Multipleselect',
   data () {
     return {
       obj1: [
