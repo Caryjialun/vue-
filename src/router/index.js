@@ -19,6 +19,9 @@ import Attrs from '@/views/attrs'
 import MultipleSelect from '@/views/multipleSelect'
 import Tabs from '@/views/tabDemo'
 import Cascader from '@/views/cascaderDemo'
+import Checkbox from '@/views/CheckboxDemo'
+import TreeDemo from '@/views/tree'
+import TreeCheckbox from '@/views/treeDemo'
 Vue.use(Router)
 
 export default new Router({
@@ -122,6 +125,21 @@ export default new Router({
       path: '/cascader',
       name: 'Cascader',
       component: Cascader
+    },
+    {
+      path: '/checkbox',
+      name: 'Checkbox',
+      component: Checkbox
+    },
+    {
+      path: '/treeDemo',
+      name: 'Trees',
+      component: TreeDemo
+    },
+    {
+      path: '/treeCheckbox',
+      name: 'TreeCheckbox',
+      component: TreeCheckbox
     }
   ]
 })

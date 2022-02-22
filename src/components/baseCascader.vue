@@ -10,6 +10,7 @@
         :options="options"
         :selectedItems="selectedItems"
         :level="0"
+        @changeChecked="changeChecked"
         @change="change"/>
     </div>
   </div>
@@ -36,9 +37,31 @@ export default {
     }
   },
   methods: {
+    treeData (list, isChecked) {
+      // let obj
+      // return list.map(item => {
+      //   if (isChecked) {
+      //     this.$set(item, 'checked', true)
+      //     obj = {...item, checked: true}
+      //     if (Array.isArray(item.children)) {
+      //       obj.children = this.treeData(item.children)
+      //     }
+      //   } else {
+      //     obj = {...item, checked: isChecked}
+      //     if (Array.isArray(item.children)) {
+      //       obj.children = this.treeData(item.children)
+      //     }
+      //     console.log('obj---', obj)
+      //   }
+      //   return obj
+      // })
+    },
+    changeChecked (newValue) {
+      // console.log('value---', newValue)
+      this.selectedItems = newValue
+    },
     change (newValue) {
-      console.log('newValue-----', newValue)
-      if (!newValue.item.children) {
+      if (!newValue.item.children || !newValue.item.children.length) {
         this.selectedItems.splice(newValue.level, 1, newValue.item) // 没有children则直接替换
       } else {
         this.count = newValue.level + 1

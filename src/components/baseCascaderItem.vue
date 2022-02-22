@@ -3,9 +3,17 @@
 
     <!--首先渲染出级联组件的最左边部分-->
     <div class="content-left" :style="{width:widthChanges+'px'}">
-      <!-- {{level}}{{count}} -->
+      <a-checkbox @change="changeAll">全选</a-checkbox>
       <div class="left-width" v-for="(item, index) in options" :key="index">
-        <div class="label" @click="select(item)"> {{item.label}}</div>
+        <div class="label" @click.stop="select(item)">
+
+          <input
+              :class="['check', item.checked ? 'chkDisabled' : '']"
+              type="checkbox"
+              @click.native.stop
+              @change="onChange(item, $event)"
+              v-model="item.checked"/>{{item.label}}
+        </div>
       </div>
     </div>
 
@@ -31,6 +39,9 @@ export default {
   data () {
     return {
       // widthChange: 100
+      // isChecked: false
+      // result: []
+      currentNode: []
     }
   },
   computed: {
@@ -61,22 +72,73 @@ export default {
       }
     }
   },
+  watch: {
+    'currentNode': {
+      immediate: true,
+      deep: true,
+      handler (newVal, oldVal) {
+        if (newVal.children) {
+          const checkedAll = newVal.children.every(item => item.checked)
+          this.$set(this.currentNode, 'checked', checkedAll)
+          console.log('count---', newVal)
+          // const currentAll = this.options.every(item => item.checked)
+          // if (this.count > 0) {
+          //   console.log('sss', currentAll)
+          //   this.selectedItems[this.level - 1].checked = currentAll
+          // } else {
+          //   this.selectedItems[0].checked = currentAll
+          // }
+        } else {
+          // console.log('最后一级', this.options)
+          // console.log('last--', this.currentNode, this.selectedItems[0])
+        }
+      }
+    }
+  },
   methods: {
+    // treeData (list) {
+    //   return list.map(item => {
+    //     this.$set(item, 'checked', true)
+    //     let obj = item
+    //     if (Array.isArray(item.children)) {
+    //       obj.children = this.treeData(item.children)
+    //     }
+    //     return obj
+    //   })
+    // },
+    // 更新节点下的所有节点状态
+    updateTree (data, checked) {
+      this.$set(data, 'checked', checked)
+      if (data.children && data.children.length) {
+        data.children.forEach(item => {
+          this.updateTree(item, checked)
+        })
+      }
+    },
+    onChange (node, $event) {
+      this.currentNode = node
+      this.updateTree(node, $event.target.checked)
+    },
+    changeAll (e) {
+      console.log('选择全部', e.target.checked)
+    },
     select (item) {
+      const currentAll = this.options.every(item => item.checked)
+      if (this.level > 0) {
+        this.selectedItems[this.level - 1].checked = currentAll
+      }
       // 处理CascaderItem组件左侧列点击事件，item为当前点击的对象
       // 向上一级发射change事件，通知上层进行修改，并将当前点击的层级level和item传递过去
-      // console.log('item---', item.children)
-      // if (!item.children) {
-      //   console.log('current----', this.level)
-      // }
-
       this.$emit('change', {level: this.level, item: item})
     },
     change (newValue) { // 向顶层传递数据改变信息
       this.$emit('change', newValue)
     }
-  }
 
+  },
+  mounted () {
+
+  }
 }
 </script>
 <style lang="scss" scoped>

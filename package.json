@@ -11,9 +11,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "ant-design-vue": "^1.7.8",
     "better-scroll": "^1.15.2",
     "crypto-random-string": "^3.3.0",
     "element-ui": "^2.4.5",
+    "vc-tree": "^0.3.7",
+    "view-design": "^4.7.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
